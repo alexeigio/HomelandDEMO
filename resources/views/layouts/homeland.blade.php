@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
-    <link rel="stylesheet" href="{{asset('css/mediaelementplayer.css')}}">
-    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('css/fl-bigmug-line.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mediaelementplayer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fl-bigmug-line.css') }}">
 
 
-    <link rel="stylesheet" href="{{asset('css/aos.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
 
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
   </head>
   <body>
@@ -44,7 +44,7 @@
         <div class="container py-1">
           <div class="row align-items-center">
             <div class="col-8 col-md-8 col-lg-4">
-              <h1 class="mb-0"><a href="/" class="text-white h2 mb-0"><strong>Homeland<span class="text-danger">.</span></strong></a></h1>
+              <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0"><strong>Homeland<span class="text-danger">.</span></strong></a></h1>
             </div>
             <div class="col-4 col-md-4 col-lg-8">
               <nav class="site-navigation text-right text-md-right" role="navigation">
@@ -60,16 +60,16 @@
                   <li class="has-children">
                     <a href="properties.html">Properties</a>
                     <ul class="dropdown arrow-top">
-                      <li><a href="#">Condo</a></li>
-                      <li><a href="#">Property Land</a></li>
-                      <li><a href="#">Commercial Building</a></li>
+                      <li><a href="{{route('property_listing_type',1)}}">Condo</a></li>
+                      <li><a href="{{route('property_listing_type',2)}}">Commercial Building</a></li>
+                      <li><a href="{{route('property_listing_type',3)}}">Property Land</a></li>
 
                     </ul>
                   </li>
                   <li><a href="/about">About</a></li>
                   <li><a href="/contact">Contact</a></li>
-                  <li><a href="login.html">Login</a></li>
-                  <li><a href="register.html">Register</a></li>
+                  <li><a href="/login">Login</a></li>
+                  <li><a href="/register">Register</a></li>
                 </ul>
               </nav>
             </div>
@@ -110,9 +110,7 @@
 
     </div>
 
-
     @yield('content')
-
 
     <footer class="site-footer">
       <div class="container">
@@ -133,7 +131,7 @@
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="/">Home</a></li>
+                  <li><a href="#">Home</a></li>
                   <li><a href="#">Buy</a></li>
                   <li><a href="#">Rent</a></li>
                   <li><a href="#">Properties</a></li>
@@ -182,20 +180,19 @@
 
   </div>
 
-  <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
-  <script src="{{asset('js/jquery-migrate-3.0.1.min.js')}}"></script>
-  <script src="{{asset('js/jquery-ui.js')}}"></script>
-  <script src="{{asset('js/popper.min.js')}}"></script>
-  <script src="{{asset('js/bootstrap.min.js')}}"></script>
-  <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('js/mediaelement-and-player.min.js')}}"></script>
-  <script src="{{asset('js/jquery.stellar.min.js')}}"></script>
-  <script src="{{asset('js/jquery.countdown.min.js')}}"></script>
-  <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
-  <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
-  <script src="{{asset('js/aos.js')}}"></script>
-
-  <script src="js/main.js"></script>
+  <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ asset('js/jquery-ui.js') }}"></script>
+  <script src="{{ asset('js/popper.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('js/mediaelement-and-player.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+  <script src="{{ asset('js/aos.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
 
   </body>
 </html>

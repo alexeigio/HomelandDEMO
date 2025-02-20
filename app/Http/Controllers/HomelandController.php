@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Models\ContactMessage;
+use App\Mail\ContactFormMail;
 
 class HomelandController extends Controller
 {
@@ -49,14 +52,22 @@ class HomelandController extends Controller
 
     public function buy()
     {
-        $properties = Property::where("offer_type", "For Sale");
-        return view('homeland.buy');
+        $properties = Property::where("offer_type", "For Sale") -> get();
+        return view('homeland.buy', compact('properties'));
 
     }
 
     public function rent()
     {
-        $properties = Property::where("offer_type", "For Rent");
+        $properties = Property::where("offer_type", "For Rent") -> get();
+        return view('homeland.rent', compact('properties'));
+
+    }
+
+    public function listing_type($listind_typr_id)
+    {
+        //$properties = Property::where("property_listing_type") -> get();
+        $properties = PropertyListingType::find($listind_type_id)->properties;
         return view('homeland.rent');
 
     }
@@ -73,15 +84,42 @@ class HomelandController extends Controller
 
     }
 
-    public function contact()
+    public function contact(Request $request)
     {
-        return view('homeland.contact');
+        if ($request->isMethod('post')) {
+            $request->validate([
+                'fullname' => 'required|string|max:255',
+                'email' => 'required|email|max:50',
+                'subject' => 'required|string|max:255',
+                'message' => 'required|string|max:1000',
+            ]);
 
+
+            $contact = new ContactMessage();
+            $contact->fullname = $request->input("fullname");
+            $contact->email = $request->input("email");
+            $contact->subject = $request->input("subject");
+            $contact->message = $request->input("message");
+            $contact->save();
+
+
+            Mail::to('20031398@itcelaya.edu.mx')->send(new ContactFormMail($contact));
+
+            return back()->with('success', 'Your message has been sent successfully!');
+        }
+
+        return view('homeland.contact');
     }
 
     public function login()
     {
         return view('homeland.login');
+
+    }
+
+    public function register()
+    {
+        return view('homeland.register');
 
     }
 }

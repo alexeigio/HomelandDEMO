@@ -31,4 +31,16 @@ class Property extends Model
     {
         return Number::currency($this->price / $this->sq_ft);
     }
+
+    public function show($id)
+    {
+        $property = Property::with('reviews')->findOrFail($id);
+
+        return view('property.show', compact('property'));
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
