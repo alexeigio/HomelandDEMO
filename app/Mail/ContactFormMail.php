@@ -38,7 +38,7 @@ class ContactFormMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.contact', // Asegúrate de que esta vista exista
+            view: 'emails.contact',
             with: ['contact' => $this->contact]
         );
     }

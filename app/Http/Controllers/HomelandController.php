@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Models\ContactMessage;
 use App\Mail\ContactFormMail;
+use App\Models\PropertyListingType; // Asegúrate de que la ruta del modelo sea correcta
+use App\Models\ContactAgent;
 
 class HomelandController extends Controller
 {
@@ -64,11 +66,12 @@ class HomelandController extends Controller
 
     }
 
-    public function listing_type($listind_typr_id)
+    public function properties_listing_type($property_listing_type_id)
     {
         //$properties = Property::where("property_listing_type") -> get();
-        $properties = PropertyListingType::find($listind_type_id)->properties;
-        return view('homeland.rent');
+        $properties = PropertyListingType::find($property_listing_type_id)->properties;
+        //dd($properties);
+        return view('homeland.index', compact('properties'));
 
     }
 

@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css') }}">
   </head>
   <body>
 
@@ -60,9 +61,9 @@
                   <li class="has-children">
                     <a href="properties.html">Properties</a>
                     <ul class="dropdown arrow-top">
-                      <li><a href="{{route('property_listing_type',1)}}">Condo</a></li>
-                      <li><a href="{{route('property_listing_type',2)}}">Commercial Building</a></li>
-                      <li><a href="{{route('property_listing_type',3)}}">Property Land</a></li>
+                      <li><a href="{{route('properties_listing_type',1)}}">Condo</a></li>
+                      <li><a href="{{route('properties_listing_type',2)}}">Commercial Building</a></li>
+                      <li><a href="{{route('properties_listing_type',3)}}">Property Land</a></li>
 
                     </ul>
                   </li>
@@ -192,6 +193,7 @@
   <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
   <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
   <script src="{{ asset('js/aos.js') }}"></script>
+  <script src="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css"></script>
   <script src="{{ asset('js/main.js') }}"></script>
 
   </body>

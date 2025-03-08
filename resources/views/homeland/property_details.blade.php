@@ -177,11 +177,11 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control">
+                            <input type="email" id="email" name="email" class="form-control" value="{{old('email')}}">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input type="text" id="phone" name="phone"  class="form-control">
+                            <input type="text" id="phone" name="phone"  class="form-control" value="{{old('phone')}}">
                         </div>
                         <div class="form-group">
                             <label for="phone">Message</label>
